@@ -75,7 +75,7 @@ public class CBTabBarButton: UIControl {
     private var tabLabel = UILabel()
     private var tabBg = UIView()
     
-    private let bgHeight: CGFloat = 42.0
+    private let bgHeight: CGFloat = 35.0
     private var csFoldedBgTrailing: NSLayoutConstraint!
     private var csUnfoldedBgTrailing: NSLayoutConstraint!
     private var csFoldedLblLeading: NSLayoutConstraint!
@@ -94,7 +94,7 @@ public class CBTabBarButton: UIControl {
         tabImage.contentMode = .center
         tabImage.translatesAutoresizingMaskIntoConstraints = false
         tabLabel.translatesAutoresizingMaskIntoConstraints = false
-        tabLabel.font = UIFont.systemFont(ofSize: 14)
+        tabLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
         tabLabel.adjustsFontSizeToFitWidth = true
         tabBg.translatesAutoresizingMaskIntoConstraints = false
         tabBg.isUserInteractionEnabled = false
@@ -156,7 +156,7 @@ public class CBTabBarButton: UIControl {
         foldedConstraints.forEach{ $0.isActive = false }
         unfoldedConstraints.forEach{ $0.isActive = true }
         UIView.animate(withDuration: duration) {
-            self.tabBg.alpha = 3.0
+            self.tabBg.alpha = 0.5
         }
         UIView.animate(withDuration: duration * 0.5, delay: duration * 0.5, options: [], animations: {
             self.tabLabel.alpha = 1.0

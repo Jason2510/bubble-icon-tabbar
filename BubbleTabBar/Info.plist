@@ -18,5 +18,12 @@
 	<string>0.8.3</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Montserrat-Light_0.ttf</string>
+        <string>Montserrat-Medium_0.ttf</string>
+        <string>Montserrat-Regular_0.ttf</string>
+        <string>Montserrat-SemiBold_0.ttf</string>
+    </array>
 </dict>
 </plist>
