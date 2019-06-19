@@ -125,16 +125,29 @@ public class CBTabBarButton: UIControl {
     }
     
     private func fold(animationDuration duration: Double = 0.0) {
-        unfoldedConstraints.forEach{ $0.isActive = false }
-        foldedConstraints.forEach{ $0.isActive = true }
+        /*unfoldedConstraints.forEach{ $0.isActive = false }
+         foldedConstraints.forEach{ $0.isActive = true }
+         UIView.animate(withDuration: duration) {
+         self.tabBg.alpha = 0.0
+         }
+         UIView.animate(withDuration: duration * 0.4) {
+         self.tabLabel.alpha = 0.0
+         }
+         UIView.transition(with: tabImage, duration: duration, options: [.transitionCrossDissolve], animations: {
+         self.tabImage.tintColor = .black
+         }, completion: nil)*/
+        
+        foldedConstraints.forEach{ $0.isActive = false }
+        unfoldedConstraints.forEach{ $0.isActive = true }
         UIView.animate(withDuration: duration) {
             self.tabBg.alpha = 0.0
         }
-        UIView.animate(withDuration: duration * 0.4) {
-            self.tabLabel.alpha = 0.0
-        }
+        UIView.animate(withDuration: duration * 0.5, delay: duration * 0.5, options: [], animations: {
+            self.tabLabel.alpha = 1.0
+            self.tabLabel.textColor = #colorLiteral(red: 0.6392156863, green: 0.6392156863, blue: 0.6392156863, alpha: 1)
+        }, completion: nil)
         UIView.transition(with: tabImage, duration: duration, options: [.transitionCrossDissolve], animations: {
-            self.tabImage.tintColor = .black
+            self.tabImage.tintColor = #colorLiteral(red: 0.6392156863, green: 0.6392156863, blue: 0.6392156863, alpha: 1)
         }, completion: nil)
         
     }
@@ -150,6 +163,7 @@ public class CBTabBarButton: UIControl {
         }, completion: nil)
         UIView.transition(with: tabImage, duration: duration, options: [.transitionCrossDissolve], animations: {
             self.tabImage.tintColor = self.tintColor
+            self.tabLabel.textColor = self.tintColor
         }, completion: nil)
     }
     
