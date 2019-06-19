@@ -156,7 +156,7 @@ public class CBTabBarButton: UIControl {
         foldedConstraints.forEach{ $0.isActive = false }
         unfoldedConstraints.forEach{ $0.isActive = true }
         UIView.animate(withDuration: duration) {
-            self.tabBg.alpha = 1.0
+            self.tabBg.alpha = 3.0
         }
         UIView.animate(withDuration: duration * 0.5, delay: duration * 0.5, options: [], animations: {
             self.tabLabel.alpha = 1.0
@@ -178,6 +178,6 @@ public class CBTabBarButton: UIControl {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        tabBg.layer.cornerRadius = tabBg.bounds.height / 2.0
+        tabBg.layer.cornerRadius = 8.0 //tabBg.bounds.height / 2.0
     }
 }
